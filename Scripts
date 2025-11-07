@@ -1,1 +1,12 @@
-print("bitch")
+if not game:IsLoaded() then game.Loaded:Wait() end
+
+local games = {
+    [6701277882] = 'https://api.luarmor.net/files/v3/loaders/6da6452cdfc2e98380813b516380dd05.lua',
+    [121864768012064] = 'https://api.luarmor.net/files/v3/loaders/6da6452cdfc2e98380813b516380dd05.lua',
+}
+
+if games[game.PlaceId] then
+    loadstring(game:HttpGet(games[game.PlaceId]))()
+else
+    warn("⚠️ Game not supported:", game.PlaceId)
+end
